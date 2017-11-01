@@ -1,7 +1,7 @@
 from scipy.integrate import quad
 
 def f(x):
-    return x**3
+    return (-x/2)
 
 
 # funcao fatorial
@@ -36,7 +36,7 @@ def main(args):
     # print(x)
     # calculaIntegral()
     i = quad(f,0,2)
-    print(i)
+    print(i[0])
     return 0
 
 if __name__ == '__main__':
