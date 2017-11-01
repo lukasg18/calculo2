@@ -1,3 +1,8 @@
+from scipy.integrate import quad
+
+def f(x):
+    return x**3
+
 
 # funcao fatorial
 def fatorial(x):
@@ -9,10 +14,10 @@ def fatorial(x):
 # funcao de distribuicao normal
 def distribuicaoNormal(x):
     i = 0
-    # while(i < )
+    # while(i < 30):
     return ((1/((2*3.14)**(1/2))) * serieMclariun(x)) #  (1/(2.pi)) ^ -x²/2 
 
-# calculando exp com serie de Mclariun
+# calculando exp com serie
 def serieMclariun(x):
     i = 0
     soma = 0
@@ -26,9 +31,12 @@ def serieMclariun(x):
 
 def main(args):
     # x = fatorial(4)
-    x = distribuicaoNormal(0.00)
+    # x = distribuicaoNormal(0.00)
     # x = serieMclariun(0.00)
-    print(x)
+    # print(x)
+    # calculaIntegral()
+    i = quad(f,0,2)
+    print(i)
     return 0
 
 if __name__ == '__main__':
