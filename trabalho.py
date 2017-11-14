@@ -34,7 +34,7 @@ def geraTabela():
         vet = []
         i += 0.1
         j = 0
-    np.set_printoptions(precision=4, linewidth=100) #configurando o modo de visualizacao da matriz, onde o "precision" e a quantidade de casas decimais apos a virgula e o "linewidth" e quantidade de termos a serem imprimidas em uma linha
+    np.set_printoptions(precision=6, linewidth=200) #configurando o modo de visualizacao da matriz, onde o "precision" e a quantidade de casas decimais apos a virgula e o "linewidth" e quantidade de termos a serem imprimidas em uma linha
     print(np.matrix(matriz)) # usando numpy para imprimir a matriz
 
 def main(args):
