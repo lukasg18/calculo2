@@ -7,21 +7,14 @@ def f(x):
     soma = 0
     while(i < 30):
         fat = fatorial(i)
-        vet.append(((((-x**2)/2)**i)/fat)) # armazenando posicao por posicao para passar a expressao a ser definida.
+        soma = soma + ((((-x**2)/2)**i)/fat) # concatena uma unica expressao dentro da integral
         i +=1
-    i = 0
-    while(i < 30):
-        soma = soma + vet[i] # varrendo posicao por posicao para concatenar um unica expressao dentro da integral
-        i += 1
     return soma # expressao a ser integrada pela biblioteca "scipy.integrate"
 
-
 def fatorial(x):
-    if((x == 1) or (x == 0)):
+    if(x <= 1):
         return 1
-    else:
-        return fatorial(x-1) * x
-
+    return fatorial(x-1) * x
 
 def geraTabela():
     x = 0
@@ -30,7 +23,7 @@ def geraTabela():
     vet = []
     matriz = []
     while (i < 4): # a variavel i varia de 0.0 ate 3.9 (coluna da tabela, veja o exemplo q a professora colocou no drive)
-        while(j < 10): # linha da tabela varia de 1 a 9
+        while (j < 10): # linha da tabela varia de 1 a 9
             b = i + (j/100.0) # incrementando de 0.01 por 0.01
             resultIntegral = quad(f,0,b) # funcao q calcula a integral onde os parametros sao: (expressao a ser integrada, intervalo de integracao,intervalo de integracao)
             aux = (1/((2*3.14159265359)**(0.5))) # constante da formula de ditribuicao normal padrao(exmplo descrito no trabalho). 
@@ -43,7 +36,6 @@ def geraTabela():
         j = 0
     np.set_printoptions(precision=4, linewidth=100) #configurando o modo de visualizacao da matriz, onde o "precision" e a quantidade de casas decimais apos a virgula e o "linewidth" e quantidade de termos a serem imprimidas em uma linha
     print(np.matrix(matriz)) # usando numpy para imprimir a matriz
-
 
 def main(args):
     # i = quad(f,0,0.01)
