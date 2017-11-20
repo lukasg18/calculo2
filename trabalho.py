@@ -38,12 +38,7 @@ def geraTabela():
     print(np.matrix(matriz)) # usando numpy para imprimir a matriz
 
 def main(args):
-    # i = quad(f,0,0.01)
-    # t = (1/((2*3.14159265359)**(0.5)))
-    # z = i[0] * t
-    # print("%.4f" % z)
     geraTabela()
-    # # print(0.1+(1/10.0))
     return 0
 
 if __name__ == '__main__':
