@@ -1,10 +1,23 @@
+from functools import wraps
 
-# funcao fatorial
+def memo(f):
+  # Decorador de "memória" para programação dinâmica.
+  @wraps(f)
+  def func(*args):
+    if args not in func.cache:
+      func.cache[args] = f(*args)
+    return func.cache[args]
+  func.cache = {}
+  return func
+
+
+# Função fatorial
+@memo
 def fatorial(x):
-    if((x == 1) or (x == 0)):
-        return 1
-    else:
-        return fatorial(x-1) * x
+  if x == 0:
+    return 1
+  return x * fatorial(x-1)
+
 
 # funcao de distribuicao normal
 def distribuicaoNormal(x):
