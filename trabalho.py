@@ -1,5 +1,6 @@
 from scipy.integrate import quad
 import numpy as np
+import csv
 
 def f(x):
     vet = []
@@ -17,6 +18,7 @@ def fatorial(x):
     return fatorial(x-1) * x
 
 def geraTabela():
+    c = csv.writer(open("teste.csv", "wb"))
     x = 0
     j = 0
     i = 0.0
@@ -30,6 +32,7 @@ def geraTabela():
             valor = resultIntegral[0] * aux # multiplicando o resultado da integral pela constante. o resultado do integral se encontra na primeira posicao do vetor, por isso eu multiplico pela posicao 0.
             vet.append(valor) #salvando o resultado em um vetor(linha a linha da tabela "0.1", "0.2", "0.3", ...)
             j += 1
+        c.writerow(vet)
         matriz.append(vet) # salvando a linha da tabela em uma matriz.
         vet = []
         i += 0.1
@@ -38,6 +41,7 @@ def geraTabela():
     print(np.matrix(matriz)) # usando numpy para imprimir a matriz
 
 def main(args):
+
     geraTabela()
     return 0
 
