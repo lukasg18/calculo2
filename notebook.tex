@@ -289,26 +289,33 @@ f(x)   = \frac{senx}{x}
 \end{equation*}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}84}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+         \PY{k+kn}{import} \PY{n+nn}{texttable} \PY{k}{as} \PY{n+nn}{tt}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}
-        \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-        \PY{n}{y2} \PY{o}{=} \PY{n}{y} \PY{o}{/} \PY{n}{x}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)/x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo \PYZdl{}x\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}147}]:} \PY{k}{def} \PY{n+nf}{gera\PYZus{}grafico}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+              \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{200}\PY{p}{)}
+              \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+              \PY{n}{y2} \PY{o}{=} \PY{n}{y} \PY{o}{/} \PY{n}{x}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)/x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo \PYZdl{}x\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}148}]:} \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_2_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_3_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -328,9 +335,9 @@ para:}\label{considere-a-suxe9rie-maclaurin-para}}
 \sin (x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}
 \end{equation*}
 
-\hypertarget{dividindo-o-x-termo-a-termo}{%
-\subsection{dividindo o ``x'' termo a
-termo:}\label{dividindo-o-x-termo-a-termo}}
+\hypertarget{dividindo-a-serie-por-x-temos}{%
+\subsection{dividindo a serie por ``x'',
+temos:}\label{dividindo-a-serie-por-x-temos}}
 
 \begin{equation*}
 \frac{senx}{x} = \sum_{n=0}^\infty (-1)^n \frac{1}{x} \frac{x^{2n+1}}{(2n+1)!} = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n+1)!}
@@ -342,6 +349,99 @@ termo:}\label{dividindo-o-x-termo-a-termo}}
 \begin{equation*}
 \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n+1)!} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} -\frac{x^6}{7!} + ...
 \end{equation*}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+    \hypertarget{passo-3-escrever-a-derivada-da-funuxe7uxe3o}{%
+\section{Passo 3 -- Escrever a derivada da
+função:}\label{passo-3-escrever-a-derivada-da-funuxe7uxe3o}}
+
+\begin{equation*}
+f(x)   = \frac{senx}{x}
+\end{equation*}
+
+\hypertarget{verificar-os-valores-da-derivada-nos-pontos}{%
+\section{verificar os valores da derivada nos
+pontos}\label{verificar-os-valores-da-derivada-nos-pontos}}
+
+\begin{itemize}
+\tightlist
+\item
+  x = 0;
+\item
+  x = π/2;
+\item
+  x = π;
+\item
+  x =3π/2;
+\item
+  x = 2π ;
+\item
+  x =5π/2;
+\item
+  x = 3π
+\end{itemize}
+
+    \hypertarget{derivada-da-serie}{%
+\subsection{derivada da serie:}\label{derivada-da-serie}}
+
+\begin{equation*}
+\frac{d}{dx}(\sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n+1)!}) = \sum_{n=0}^\infty \frac{(-1)^n 2n}{(2n+1)!}.x^{2n-1}
+\end{equation*}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}131}]:} \PY{k}{def} \PY{n+nf}{fatorial}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{x} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+              \PY{k}{return} \PY{l+m+mi}{1}
+            \PY{k}{return} \PY{n}{x} \PY{o}{*} \PY{n}{fatorial}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+          
+          \PY{k}{def} \PY{n+nf}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+              \PY{n}{tabela} \PY{o}{=} \PY{n}{tt}\PY{o}{.}\PY{n}{Texttable}\PY{p}{(}\PY{p}{)}
+              \PY{n}{tabela}\PY{o}{.}\PY{n}{header}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{valor}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+              \PY{n}{valores} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+              \PY{n}{pontos} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{]}
+              \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
+              \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+              \PY{k}{for} \PY{n}{p} \PY{o+ow}{in} \PY{n}{pontos}\PY{p}{:}
+                  \PY{n}{v} \PY{o}{=} \PY{n}{valores}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+                  \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
+                  \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:}
+                      \PY{n}{fat} \PY{o}{=} \PY{n}{fatorial}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                      \PY{k}{if} \PY{n}{p} \PY{o}{==} \PY{l+m+mf}{0.0}\PY{p}{:}
+                          \PY{n}{resultado} \PY{o}{=} \PY{l+m+mi}{1}
+                      \PY{k}{else}\PY{p}{:}
+                          \PY{n}{resultado} \PY{o}{=} \PY{n}{resultado} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{n}{n}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{tabela}\PY{o}{.}\PY{n}{add\PYZus{}row}\PY{p}{(}\PY{p}{[}\PY{n}{v}\PY{p}{,}\PY{n}{resultado}\PY{p}{]}\PY{p}{)}
+                  \PY{n}{i}\PY{o}{+}\PY{o}{=}\PY{l+m+mi}{1}
+              \PY{n+nb}{print}\PY{p}{(}\PY{n}{tabela}\PY{o}{.}\PY{n}{draw}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}132}]:} \PY{n}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
++-------+--------+
+|   x   | valor  |
++=======+========+
+| 0     | 1      |
++-------+--------+
+| pi/2  | -0.405 |
++-------+--------+
+| pi    | -0.318 |
++-------+--------+
+| 3pi/2 | 0.045  |
++-------+--------+
+| 2pi   | 0.159  |
++-------+--------+
+| 5pi/2 | -0.016 |
++-------+--------+
+| 3pi   | -0.106 |
++-------+--------+
+
+    \end{Verbatim}
 
 
     % Add a bibliography block to the postdoc
