@@ -280,7 +280,7 @@
     
 
     
-    alunos: Lucas Gomes Flegler e Luiz Antonio Roque Guzzo
+    Alunos: Lucas Gomes Flegler e Luiz Antonio Roque Guzzo
 
     \hypertarget{passo-1-esbouxe7ar-o-gruxe1fico-da-funuxe7uxe3o}{%
 \section{Passo 1 -- Esboçar o gráfico da
@@ -291,11 +291,12 @@ f(x)   = \frac{senx}{x}
 \end{equation*}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{texttable} \PY{k}{as} \PY{n+nn}{tt}
-         \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{quad}
-         \PY{k+kn}{import} \PY{n+nn}{csv}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{texttable} \PY{k}{as} \PY{n+nn}{tt}
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{quad}
+        \PY{k+kn}{import} \PY{n+nn}{csv}
 \end{Verbatim}
 
 
@@ -373,13 +374,13 @@ pontos}\label{verificar-os-valores-da-derivada-nos-pontos}}
 x = 0 & x = \pi/2\\
 \hline
 \hline \
-x = \pi & x =3π/2\\
+x = \pi & x =3\pi/2\\
 \hline
 \hline \
-x = 2π & x =5π/2\\
+x = 2\pi & x =5\pi/2\\
 \hline
 \hline \
-x = 3π & \\
+x = 3\pi & \\
 \hline
 \end{array}\]
 
@@ -391,32 +392,32 @@ x = 3π & \\
 \end{equation*}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{k}{def} \PY{n+nf}{fatorial}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-           \PY{k}{if} \PY{n}{x} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-             \PY{k}{return} \PY{l+m+mi}{1}
-           \PY{k}{return} \PY{n}{x} \PY{o}{*} \PY{n}{fatorial}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
-         
-         \PY{k}{def} \PY{n+nf}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}\PY{p}{:}
-             \PY{n}{tabela} \PY{o}{=} \PY{n}{tt}\PY{o}{.}\PY{n}{Texttable}\PY{p}{(}\PY{p}{)}
-             \PY{n}{tabela}\PY{o}{.}\PY{n}{header}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{valor}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
-             \PY{n}{valores} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-             \PY{n}{pontos} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{]}
-             \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
-             \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
-             \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{pontos}\PY{p}{:}
-                 \PY{n}{v} \PY{o}{=} \PY{n}{valores}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{c+c1}{\PYZsh{}variavel criada para deixar ajudar a preencher a tabela}
-                 \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
-                 \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} somatoria de n = 1 até 20}
-                     \PY{n}{fat} \PY{o}{=} \PY{n}{fatorial}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
-                     \PY{n}{resultado} \PY{o}{=} \PY{n}{resultado} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{n}{n}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} 
-                 \PY{n}{tabela}\PY{o}{.}\PY{n}{add\PYZus{}row}\PY{p}{(}\PY{p}{[}\PY{n}{v}\PY{p}{,}\PY{n}{resultado}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{}salvando os dados na tabela abaixo}
-                 \PY{n}{i}\PY{o}{+}\PY{o}{=}\PY{l+m+mi}{1}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n}{tabela}\PY{o}{.}\PY{n}{draw}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}exibindo resultados}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{fatorial}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+          \PY{k}{if} \PY{n}{x} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+            \PY{k}{return} \PY{l+m+mi}{1}
+          \PY{k}{return} \PY{n}{x} \PY{o}{*} \PY{n}{fatorial}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+        
+        \PY{k}{def} \PY{n+nf}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n}{tabela} \PY{o}{=} \PY{n}{tt}\PY{o}{.}\PY{n}{Texttable}\PY{p}{(}\PY{p}{)}
+            \PY{n}{tabela}\PY{o}{.}\PY{n}{header}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{valor}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            \PY{n}{valores} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+            \PY{n}{pontos} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{]}
+            \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
+            \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{pontos}\PY{p}{:}
+                \PY{n}{v} \PY{o}{=} \PY{n}{valores}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{c+c1}{\PYZsh{}variavel criada para deixar ajudar a preencher a tabela}
+                \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
+                \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} somatoria de n = 1 até 20}
+                    \PY{n}{fat} \PY{o}{=} \PY{n}{fatorial}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                    \PY{n}{resultado} \PY{o}{=} \PY{n}{resultado} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{n}{n}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} 
+                \PY{n}{tabela}\PY{o}{.}\PY{n}{add\PYZus{}row}\PY{p}{(}\PY{p}{[}\PY{n}{v}\PY{p}{,}\PY{n}{resultado}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{}salvando os dados na tabela abaixo}
+                \PY{n}{i}\PY{o}{+}\PY{o}{=}\PY{l+m+mi}{1}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{tabela}\PY{o}{.}\PY{n}{draw}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}exibindo resultados}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -450,12 +451,12 @@ integral}\label{passo-4-gerar-uma-tabela-do-intervalo-03ux3c0-da-integral}}
 \end{equation*}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}59}]:} \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
              \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{1}
              \PY{n}{soma} \PY{o}{=} \PY{l+m+mi}{1}
              \PY{k}{while}\PY{p}{(}\PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{30}\PY{p}{)}\PY{p}{:}
                  \PY{n}{fat} \PY{o}{=} \PY{n}{fatorial}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                 \PY{n}{soma} \PY{o}{=} \PY{n}{soma} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{n}{i}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{} concatena uma unica expressao dentro da integral}
+                 \PY{n}{soma} \PY{o}{=} \PY{n}{soma} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{n}{i}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)} \PY{c+c1}{\PYZsh{} concatena uma unica expressao dentro da integral}
                  \PY{n}{i} \PY{o}{+}\PY{o}{=}\PY{l+m+mi}{1}
              \PY{k}{return} \PY{n}{soma} \PY{c+c1}{\PYZsh{} expressao a ser integrada pela biblioteca \PYZdq{}scipy.integrate\PYZdq{}}
          
@@ -466,10 +467,11 @@ integral}\label{passo-4-gerar-uma-tabela-do-intervalo-03ux3c0-da-integral}}
              \PY{n}{vet} \PY{o}{=} \PY{p}{[}\PY{p}{]}
              \PY{n}{matriz} \PY{o}{=} \PY{p}{[}\PY{p}{]}
              \PY{n}{tabela} \PY{o}{=} \PY{n}{tt}\PY{o}{.}\PY{n}{Texttable}\PY{p}{(}\PY{p}{)}
-             \PY{k}{while} \PY{p}{(}\PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} a variavel i varia de 0.0 ate 3.9 }
-                 \PY{k}{while} \PY{p}{(}\PY{n}{j} \PY{o}{\PYZlt{}} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} linha da tabela varia de 1 a 9}
+             \PY{k}{while} \PY{p}{(}\PY{n}{i} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} a variavel i varia de 0.0 ate 3.9 }
+                 \PY{k}{while} \PY{p}{(}\PY{n}{j} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{9}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} linha da tabela varia de 1 a 9}
                      \PY{n}{b} \PY{o}{=} \PY{n}{i} \PY{o}{+} \PY{p}{(}\PY{n}{j}\PY{o}{/}\PY{l+m+mf}{100.0}\PY{p}{)} \PY{c+c1}{\PYZsh{} incrementando de 0.01 por 0.01}
-                     \PY{n}{resultIntegral} \PY{o}{=} \PY{n}{quad}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{p}{(}\PY{n}{b}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{} funcao q calcula a integral onde os parametros sao: (expressao a ser integrada, intervalo de integracao,intervalo de integracao)}
+                     \PY{n}{b} \PY{o}{=} \PY{n}{b} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}
+                     \PY{n}{resultIntegral} \PY{o}{=} \PY{n}{quad}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{b}\PY{p}{)} \PY{c+c1}{\PYZsh{} funcao q calcula a integral onde os parametros sao: (expressao a ser integrada, intervalo de integracao,intervalo de integracao)}
                      \PY{n}{valor} \PY{o}{=} \PY{n}{resultIntegral}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
                      \PY{n}{vet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{valor}\PY{p}{)} \PY{c+c1}{\PYZsh{}salvando o resultado em um vetor(linha a linha da tabela \PYZdq{}0.1\PYZdq{}, \PYZdq{}0.2\PYZdq{}, \PYZdq{}0.3\PYZdq{}, ...)}
                      \PY{n}{j} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
@@ -478,57 +480,82 @@ integral}\label{passo-4-gerar-uma-tabela-do-intervalo-03ux3c0-da-integral}}
                  \PY{n}{vet} \PY{o}{=} \PY{p}{[}\PY{p}{]}
                  \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mf}{0.1}
                  \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0}
-             \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{n}{precision}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{200}\PY{p}{)} \PY{c+c1}{\PYZsh{}configurando o modo de visualizacao da matriz, onde o \PYZdq{}precision\PYZdq{} e a quantidade de casas decimais apos a virgula e o \PYZdq{}linewidth\PYZdq{} e quantidade de termos a serem imprimidas em uma linha}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{matrix}\PY{p}{(}\PY{n}{matriz}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{} usando numpy para imprimir a matriz}
+             \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{n}{precision}\PY{o}{=}\PY{l+m+mi}{6}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{200}\PY{p}{)} \PY{c+c1}{\PYZsh{}configurando o modo de visualizacao da matriz, onde o \PYZdq{}precision\PYZdq{} e a quantidade de casas decimais apos a virgula e o \PYZdq{}linewidth\PYZdq{} e quantidade de termos a serem imprimidas em uma linha}
+             \PY{c+c1}{\PYZsh{} print(np.matrix(matriz)) \PYZsh{} usando numpy para imprimir a matriz}
+             \PY{n}{def2} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{matrix}\PY{p}{(}\PY{n}{matriz}\PY{p}{)}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{def2}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}60}]:} \PY{n}{geraTabela}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{geraTabela}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-[[  0.     0.03   0.06   0.09   0.12   0.15   0.18   0.21   0.24   0.27]
- [  0.3    0.33   0.35   0.38   0.41   0.43   0.46   0.49   0.51   0.54]
- [  0.56   0.59   0.61   0.64   0.66   0.69   0.71   0.73   0.76   0.78]
- [  0.8    0.82   0.85   0.87   0.89   0.91   0.93   0.95   0.97   0.99]
- [  1.01   1.03   1.05   1.07   1.09   1.11   1.13   1.15   1.17   1.19]
- [  1.21   1.23   1.24   1.26   1.28   1.3    1.32   1.34   1.35   1.37]
- [  1.39   1.41   1.43   1.44   1.46   1.48   1.5    1.51   1.53   1.55]
- [  1.57   1.58   1.6    1.62   1.64   1.66   1.67   1.69   1.71   1.73]
- [  1.75   1.77   1.78   1.8    1.82   1.84   1.86   1.88   1.9    1.92]
- [  1.94   1.96   1.98   2.     2.02   2.04   2.06   2.08   2.1    2.12]
- [  2.14   2.16   2.18   2.21   2.23   2.25   2.27   2.3    2.32   2.34]
- [  2.37   2.39   2.41   2.44   2.46   2.49   2.51   2.54   2.56   2.59]
- [  2.61   2.64   2.67   2.69   2.72   2.75   2.77   2.8    2.83   2.86]
- [  2.89   2.91   2.94   2.97   3.     3.03   3.06   3.09   3.12   3.15]
- [  3.18   3.21   3.24   3.28   3.31   3.34   3.37   3.4    3.43   3.47]
- [  3.5    3.53   3.57   3.6    3.63   3.67   3.7    3.73   3.77   3.8 ]
- [  3.84   3.87   3.91   3.94   3.98   4.01   4.05   4.08   4.12   4.15]
- [  4.19   4.23   4.26   4.3    4.33   4.37   4.41   4.44   4.48   4.51]
- [  4.55   4.59   4.62   4.66   4.7    4.73   4.77   4.81   4.84   4.88]
- [  4.92   4.95   4.99   5.03   5.06   5.1    5.14   5.17   5.21   5.25]
- [  5.28   5.32   5.36   5.39   5.43   5.46   5.5    5.54   5.57   5.61]
- [  5.64   5.68   5.72   5.75   5.79   5.82   5.86   5.89   5.93   5.96]
- [  6.     6.03   6.07   6.1    6.13   6.17   6.2    6.24   6.27   6.3 ]
- [  6.34   6.37   6.4    6.44   6.47   6.5    6.54   6.57   6.6    6.63]
- [  6.67   6.7    6.73   6.76   6.79   6.83   6.86   6.89   6.92   6.95]
- [  6.98   7.01   7.04   7.07   7.1    7.13   7.16   7.19   7.22   7.25]
- [  7.28   7.31   7.34   7.37   7.4    7.43   7.46   7.49   7.52   7.55]
- [  7.58   7.61   7.64   7.66   7.69   7.72   7.75   7.78   7.81   7.83]
- [  7.86   7.89   7.92   7.95   7.98   8.     8.03   8.06   8.09   8.12]
- [  8.14   8.17   8.2    8.23   8.26   8.28   8.31   8.34   8.37   8.4 ]
- [  8.42   8.45   8.48   8.51   8.54   8.57   8.59   8.62   8.65   8.68]
- [  8.71   8.74   8.76   8.79   8.82   8.85   8.88   8.91   8.94   8.97]
- [  8.99   9.02   9.05   9.08   9.11   9.14   9.17   9.2    9.23   9.26]
- [  9.29   9.32   9.35   9.38   9.41   9.44   9.47   9.5    9.53   9.56]
- [  9.59   9.62   9.65   9.69   9.72   9.75   9.78   9.81   9.84   9.87]
- [  9.9    9.94   9.97  10.    10.03  10.06  10.1   10.13  10.16  10.19]
- [ 10.23  10.26  10.29  10.32  10.36  10.39  10.42  10.45  10.49  10.52]
- [ 10.55  10.59  10.62  10.65  10.69  10.72  10.75  10.79  10.82  10.86]
- [ 10.89  10.92  10.96  10.99  11.02  11.06  11.09  11.13  11.16  11.19]
- [ 11.23  11.26  11.29  11.33  11.36  11.4   11.43  11.46  11.5   11.53]]
+           0         1         2         3         4         5         6  \textbackslash{}
+0   0.000000  0.031414  0.062818  0.094201  0.125554  0.156864  0.188124   
+1   0.312442  0.343291  0.374027  0.404641  0.435124  0.465464  0.495652   
+2   0.614700  0.643988  0.673069  0.701933  0.730572  0.758976  0.787137   
+3   0.897189  0.924013  0.950547  0.976782  1.002711  1.028327  1.053623   
+4   1.151477  1.175077  1.198319  1.221198  1.243709  1.265846  1.287604   
+5   1.370762  1.390562  1.409957  1.428946  1.447525  1.465690  1.483440   
+6   1.550234  1.565871  1.581082  1.595864  1.610216  1.624139  1.637632   
+7   1.687299  1.698642  1.709558  1.720046  1.730109  1.739748  1.748966   
+8   1.781661  1.788804  1.795541  1.801874  1.807808  1.813346  1.818492   
+9   1.835237  1.838486  1.841370  1.843894  1.846063  1.847882  1.849358   
+10  1.851937  1.851781  1.851317  1.850552  1.849492  1.848144  1.846515   
+11  1.837323  1.834392  1.831222  1.827821  1.824195  1.820353  1.816302   
+12  1.798159  1.793177  1.788031  1.782730  1.777280  1.771691  1.765969   
+13  1.741911  1.735642  1.729286  1.722852  1.716345  1.709775  1.703148   
+14  1.676217  1.669414  1.662598  1.655775  1.648951  1.642134  1.635330   
+15  1.608373  1.601729  1.595136  1.588599  1.582124  1.575717  1.569382   
+16  1.544874  1.538979  1.533187  1.527502  1.521928  1.516469  1.511129   
+17  1.491035  1.486345  1.481794  1.477386  1.473124  1.469008  1.465043   
+18  1.450724  1.447538  1.444513  1.441650  1.438950  1.436414  1.434042   
+19  1.426211  1.424667  1.423289  1.422076  1.421028  1.420144  1.419424   
+20  1.418152  1.418230  1.418464  1.418851  1.419390  1.420079  1.420916   
+21  1.425691  1.427230  1.428901  1.430702  1.432629  1.434680  1.436851   
+22  1.446674  1.449397  1.452219  1.455138  1.458149  1.461249  1.464433   
+23  1.477940  1.481490  1.485100  1.488767  1.492487  1.496255  1.500069   
+24  1.515684  1.519658  1.523652  1.527661  1.531683  1.535712  1.539744   
+25  1.555831  1.559822  1.563794  1.567742  1.571663  1.575553  1.579408   
+26  1.594416  1.598048  1.601625  1.605144  1.608603  1.611998  1.615327   
+27  1.627922  1.630878  1.633752  1.636543  1.639247  1.641863  1.644389   
+28  1.653556  1.655606  1.657556  1.659406  1.661154  1.662798  1.664339   
+29  1.669451  1.670463  1.671368  1.672166  1.672857  1.673441  1.673918   
+
+           7         8         9  
+0   0.219322  0.250447  0.281491  
+1   0.525680  0.555536  0.585213  
+2   0.815048  0.842698  0.870082  
+3   1.078593  1.103229  1.127526  
+4   1.308980  1.329967  1.350563  
+5   1.500771  1.517682  1.534170  
+6   1.650694  1.663326  1.675527  
+7   1.757764  1.766144  1.774109  
+8   1.823249  1.827623  1.831617  
+9   1.850495  1.851300  1.851779  
+10  1.844611  1.842440  1.840008  
+11  1.812050  1.807603  1.802970  
+12  1.760123  1.754159  1.748086  
+13  1.696471  1.689752  1.682998  
+14  1.628545  1.621787  1.615061  
+15  1.563125  1.556951  1.550866  
+16  1.505912  1.500822  1.495862  
+17  1.461230  1.457571  1.454069  
+18  1.431836  1.429795  1.427920  
+19  1.418865  1.418468  1.418230  
+20  1.421897  1.423022  1.424288  
+21  1.439140  1.441542  1.444054  
+22  1.467698  1.471041  1.474456  
+23  1.503922  1.507812  1.511734  
+24  1.543776  1.547804  1.551824  
+25  1.583226  1.587002  1.590733  
+26  1.618586  1.621773  1.624886  
+27  1.646823  1.649163  1.651408  
+28  1.665775  1.667107  1.668332  
+29  1.674288  1.674551  1.674709  
 
     \end{Verbatim}
 
