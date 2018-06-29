@@ -291,32 +291,32 @@ f(x)   = \frac{senx}{x}
 \end{equation*}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
-         \PY{k+kn}{import} \PY{n+nn}{texttable} \PY{k}{as} \PY{n+nn}{tt}
-         \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{quad}
-         \PY{k+kn}{import} \PY{n+nn}{csv}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{texttable} \PY{k}{as} \PY{n+nn}{tt}
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{integrate} \PY{k}{import} \PY{n}{quad}
+        \PY{k+kn}{import} \PY{n+nn}{csv}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}34}]:} \PY{k}{def} \PY{n+nf}{gera\PYZus{}grafico}\PY{p}{(}\PY{n}{p1}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{p2}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nada}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
-             \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n}{p1}\PY{p}{,}\PY{n}{p2}\PY{p}{,}\PY{l+m+mi}{200}\PY{p}{)}
-             \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-             \PY{n}{y2} \PY{o}{=} \PY{n}{y} \PY{o}{/} \PY{n}{x}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)/x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{n}{texto}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo \PYZdl{}x\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
-             \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{def} \PY{n+nf}{gera\PYZus{}grafico}\PY{p}{(}\PY{n}{p1}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{p2}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{nada}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{:}
+            \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{n}{p1}\PY{p}{,}\PY{n}{p2}\PY{p}{,}\PY{l+m+mi}{200}\PY{p}{)}
+            \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+            \PY{n}{y2} \PY{o}{=} \PY{n}{y} \PY{o}{/} \PY{n}{x}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sen(x)/x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{n}{texto}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo \PYZdl{}x\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Eixo y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+            \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{intervalo[\PYZhy{}3pi, 3pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intervalo[\PYZhy{}3pi, 3pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -393,36 +393,36 @@ x = 3\pi & \\
 \end{equation*}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{k}{def} \PY{n+nf}{fatorial}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
-           \PY{k}{if} \PY{n}{x} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
-             \PY{k}{return} \PY{l+m+mi}{1}
-           \PY{k}{return} \PY{n}{x} \PY{o}{*} \PY{n}{fatorial}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
-         
-         \PY{k}{def} \PY{n+nf}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}\PY{p}{:}
-             \PY{n}{tabela} \PY{o}{=} \PY{n}{tt}\PY{o}{.}\PY{n}{Texttable}\PY{p}{(}\PY{p}{)}
-             \PY{n}{tabela}\PY{o}{.}\PY{n}{header}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{valor}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
-             \PY{n}{valores} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-             \PY{n}{pontos} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{]}
-             \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
-             \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
-             \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{pontos}\PY{p}{:}
-                 \PY{n}{v} \PY{o}{=} \PY{n}{valores}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{c+c1}{\PYZsh{}variavel criada para deixar ajudar a preencher a tabela}
-                 \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
-                 \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} somatoria de n = 1 até 20}
-                     \PY{n}{fat} \PY{o}{=} \PY{n}{fatorial}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
-                     \PY{n}{resultado} \PY{o}{=} \PY{n}{resultado} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{n}{n}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} 
-                 \PY{n}{tabela}\PY{o}{.}\PY{n}{add\PYZus{}row}\PY{p}{(}\PY{p}{[}\PY{n}{v}\PY{p}{,}\PY{n}{resultado}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{}salvando os dados na tabela abaixo}
-                 \PY{n}{i}\PY{o}{+}\PY{o}{=}\PY{l+m+mi}{1}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n}{tabela}\PY{o}{.}\PY{n}{draw}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}exibindo resultados}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{fatorial}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+          \PY{k}{if} \PY{n}{x} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+            \PY{k}{return} \PY{l+m+mi}{1}
+          \PY{k}{return} \PY{n}{x} \PY{o}{*} \PY{n}{fatorial}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+        
+        \PY{k}{def} \PY{n+nf}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n}{tabela} \PY{o}{=} \PY{n}{tt}\PY{o}{.}\PY{n}{Texttable}\PY{p}{(}\PY{p}{)}
+            \PY{n}{tabela}\PY{o}{.}\PY{n}{header}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{valor}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            \PY{n}{valores} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5pi/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3pi}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+            \PY{n}{pontos} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{]}
+            \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
+            \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+            \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{pontos}\PY{p}{:}
+                \PY{n}{v} \PY{o}{=} \PY{n}{valores}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{c+c1}{\PYZsh{}variavel criada para deixar ajudar a preencher a tabela}
+                \PY{n}{resultado} \PY{o}{=} \PY{l+m+mf}{0.0}
+                \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} somatoria de n = 1 até 20}
+                    \PY{n}{fat} \PY{o}{=} \PY{n}{fatorial}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+                    \PY{n}{resultado} \PY{o}{=} \PY{n}{resultado} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{n}{n}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)} 
+                \PY{n}{tabela}\PY{o}{.}\PY{n}{add\PYZus{}row}\PY{p}{(}\PY{p}{[}\PY{n}{v}\PY{p}{,}\PY{n}{resultado}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{}salvando os dados na tabela abaixo}
+                \PY{n}{i}\PY{o}{+}\PY{o}{=}\PY{l+m+mi}{1}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{tabela}\PY{o}{.}\PY{n}{draw}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}exibindo resultados}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}
-         \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{intervalo[0.1, pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{intervalo[pi, 2pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{intervalo[2pi, 3pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{4}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{intervalo[3pi, 4pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{verifica\PYZus{}derivada}\PY{p}{(}\PY{p}{)}
+        \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intervalo[0.1, pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intervalo[pi, 2pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intervalo[2pi, 3pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{gera\PYZus{}grafico}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mi}{4}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{texto}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Intervalo[3pi, 4pi]}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -467,21 +467,22 @@ x = 3\pi & \\
     \end{center}
     { \hspace*{\fill} \\}
     
-    \hypertarget{passo-4-gerar-uma-tabela-do-intervalo-03ux3c0-da-integral}{%
-\section{Passo 4 -- Gerar uma tabela do intervalo {[}0,3π{]} da
-integral}\label{passo-4-gerar-uma-tabela-do-intervalo-03ux3c0-da-integral}}
+    \hypertarget{passo-4-gerar-uma-tabela-do-intervalo-03pi-da-integral}{%
+\section{Passo 4 -- Gerar uma tabela do intervalo {[}0,3pi{]} da
+integral}\label{passo-4-gerar-uma-tabela-do-intervalo-03pi-da-integral}}
 
     \begin{equation*}
 \int_{0}^{a} f(x) dx
 \end{equation*}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{def} \PY{n+nf}{f}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{:}
             \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
             \PY{n}{soma} \PY{o}{=} \PY{l+m+mi}{0}
             \PY{k}{while}\PY{p}{(}\PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{30}\PY{p}{)}\PY{p}{:}
                 \PY{n}{fat} \PY{o}{=} \PY{n}{fatorial}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
-                \PY{n}{soma} \PY{o}{=} \PY{n}{soma} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{n}{i}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)} \PY{c+c1}{\PYZsh{} concatena uma unica expressao dentro da integral}
+                \PY{c+c1}{\PYZsh{} concatena uma unica expressao dentro da integral}
+                \PY{n}{soma} \PY{o}{=} \PY{n}{soma} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{n}{i}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{fat}\PY{p}{)} 
                 \PY{n}{i} \PY{o}{+}\PY{o}{=}\PY{l+m+mi}{1}
             \PY{k}{return} \PY{n}{soma} \PY{c+c1}{\PYZsh{} expressao a ser integrada pela biblioteca \PYZdq{}scipy.integrate\PYZdq{}}
         
@@ -496,16 +497,22 @@ integral}\label{passo-4-gerar-uma-tabela-do-intervalo-03ux3c0-da-integral}}
                 \PY{k}{while} \PY{p}{(}\PY{n}{j} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{9}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} linha da tabela varia de 1 a 9}
                     \PY{n}{b} \PY{o}{=} \PY{n}{i} \PY{o}{+} \PY{p}{(}\PY{n}{j}\PY{o}{/}\PY{l+m+mf}{100.0}\PY{p}{)} \PY{c+c1}{\PYZsh{} incrementando de 0.01 por 0.01}
                     \PY{n}{b} \PY{o}{=} \PY{n}{b} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}
-                    \PY{n}{resultIntegral} \PY{o}{=} \PY{n}{quad}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{b}\PY{p}{)} \PY{c+c1}{\PYZsh{} funcao q calcula a integral onde os parametros sao: (expressao a ser integrada, intervalo de integracao,intervalo de integracao)}
+                    \PY{c+c1}{\PYZsh{} funcao q calcula a integral onde os parametros sao: }
+                    \PY{c+c1}{\PYZsh{} (expressao a ser integrada, intervalo de integracao e }
+                    \PY{c+c1}{\PYZsh{} intervalo de integracao)}
+                    \PY{n}{resultIntegral} \PY{o}{=} \PY{n}{quad}\PY{p}{(}\PY{n}{f}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{b}\PY{p}{)}
                     \PY{n}{valor} \PY{o}{=} \PY{n}{resultIntegral}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
-                    \PY{n}{vet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{valor}\PY{p}{)} \PY{c+c1}{\PYZsh{}salvando o resultado em um vetor(linha a linha da tabela \PYZdq{}0.1\PYZdq{}, \PYZdq{}0.2\PYZdq{}, \PYZdq{}0.3\PYZdq{}, ...)}
+                    \PY{c+c1}{\PYZsh{}salvando o resultado em um }
+                    \PY{c+c1}{\PYZsh{}vetor(linha a linha da tabela \PYZdq{}0.1\PYZdq{}, \PYZdq{}0.2\PYZdq{}, \PYZdq{}0.3\PYZdq{}, ...)}
+                    \PY{n}{vet}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{valor}\PY{p}{)} 
                     \PY{n}{j} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
                 \PY{n}{matriz}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{vet}\PY{p}{)} \PY{c+c1}{\PYZsh{} salvando a linha da tabela em uma matriz.}
                 \PY{n}{tabela}\PY{o}{.}\PY{n}{add\PYZus{}row}\PY{p}{(}\PY{p}{[}\PY{n}{vet}\PY{p}{]}\PY{p}{)} \PY{c+c1}{\PYZsh{}salvando os dados na tabela abaixo}
                 \PY{n}{vet} \PY{o}{=} \PY{p}{[}\PY{p}{]}
                 \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mf}{0.1}
                 \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0}
-            \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{n}{precision}\PY{o}{=}\PY{l+m+mi}{6}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{200}\PY{p}{)} \PY{c+c1}{\PYZsh{}configurando o modo de visualizacao da matriz, onde o \PYZdq{}precision\PYZdq{} e a quantidade de casas decimais apos a virgula e o \PYZdq{}linewidth\PYZdq{} e quantidade de termos a serem imprimidas em uma linha}
+                \PY{c+c1}{\PYZsh{}configurando o modo de visualizacao da matriz}
+            \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{n}{precision}\PY{o}{=}\PY{l+m+mi}{6}\PY{p}{,} \PY{n}{linewidth}\PY{o}{=}\PY{l+m+mi}{200}\PY{p}{)} 
             \PY{c+c1}{\PYZsh{} print(np.matrix(matriz)) \PYZsh{} usando numpy para imprimir a matriz}
             \PY{n}{def2} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{matrix}\PY{p}{(}\PY{n}{matriz}\PY{p}{)}\PY{p}{)}
             \PY{n+nb}{print}\PY{p}{(}\PY{n}{def2}\PY{p}{)}
@@ -513,7 +520,7 @@ integral}\label{passo-4-gerar-uma-tabela-do-intervalo-03ux3c0-da-integral}}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{geraTabela}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{geraTabela}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
